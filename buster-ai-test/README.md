@@ -1,5 +1,7 @@
 # BusterAI project
 
+_Date: December 2020_
+
 ## Description
 
 This is the project I made for the recruitment process of BusterAI.

@@ -1,6 +1,8 @@
 # Housing API
 
-A simple housing API built with Flask and MongoDB
+A simple housing API built with Flask and MongoDB.
+
+_Date: December 2020_
 
 ## Run the project
 
