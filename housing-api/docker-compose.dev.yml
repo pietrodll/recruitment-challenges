@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  database:
+    image: mongo
+    env_file: ./database/.env.development
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: dependencies
+    depends_on:
+      - database
+    env_file: .env.development
+    environment:
+      FLASK_ENV: development
+      DB_HOST: database
+    volumes:
+      - "./app:/app/app"
+    ports:
+      - "5000:5000"
+    command: flask run --host=0.0.0.0

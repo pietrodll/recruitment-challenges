@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  database:
+    image: mongo
+    env_file: ./database/.env.production
+  api_prod:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    env_file: .env.production
+    environment:
+      PORT: "5000"
+      DB_HOST: database
+    ports:
+      - "5000:5000"

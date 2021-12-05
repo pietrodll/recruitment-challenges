@@ -1,0 +1,137 @@
+openapi: '3.0.2'
+info:
+  title: Housing API
+  version: '1.0'
+paths:
+  /auth/register:
+    post:
+      description: Create a new user account
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/general_error'
+  /auth/login:
+    post:
+      description: Login to retrieve an access token
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                    description: The access token to use as Bearer token for the endpoints that require authentication
+  /healthcheck:
+    description: A simple healthcheck
+    get:
+      responses:
+        '200':
+          description: OK
+  /user/me:
+    get:
+      description: Get personal information
+      responses:
+        '200':
+          description: Returns the current authenticated user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '401':
+          description: Unauthorized, the authorization header is wrong or missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/auth_error'
+    put:
+      description: Modify personal information
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        '200':
+          description: OK, the user has been modified
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+        '401':
+          description: Unauthorized, the authorization header is wrong or missing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/auth_error'
+components:
+  schemas:
+    auth_error:
+      type: object
+      properties:
+        description:
+          type: string
+    general_error:
+      type: object
+      properties:
+        message:
+          type: string
+        error_type:
+          type: string
+    house:
+      type: object
+      properties:
+        id:
+          type: string
+          description: the ID of the house
+        created_by:
+          type: string
+          description: the ID of the user who added the house
+        name:
+          type: string
+          description: the name of the house
+        address:
+          type: string
+          description: the address of the house (everything except postal code and city)
+        postal_code:
+          type: string
+          description: the postal code of the house
+        city:
+          type: string
+          description: the city of the house
+        rooms:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: the name of the room
+              size:
+                type: number
+                description: the size of the room (in square meters)
+    user:
+      type: object
+      properties:
+        id:
+          type: string
+          description: the ID of the user
+        first_name:
+          type: string
+          description: the first name of the user
+        last_name:
+          type: string
+          description: the last name of the user
+        email:
+          type: string
+          description: the email of the user
+        birth_date:
+          type: string
+          description: the date of birth of the user
