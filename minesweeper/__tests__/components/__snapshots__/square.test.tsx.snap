@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Square component renders correctly when displayed 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#cccccc",
+      "borderRadius": 3.5,
+      "display": "flex",
+      "height": 35,
+      "justifyContent": "center",
+      "margin": 2,
+      "opacity": 1,
+      "textAlign": "center",
+      "width": 35,
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "fontSize": 20,
+        }
+      }
+    >
+      1
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Square component renders correctly when displaying an icon 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#2244ee",
+      "borderRadius": 3.5,
+      "display": "flex",
+      "height": 35,
+      "justifyContent": "center",
+      "margin": 2,
+      "opacity": 1,
+      "textAlign": "center",
+      "width": 35,
+    }
+  }
+>
+  <View>
+    <SvgMock
+      fill="#cccccc"
+      height={25}
+      width={25}
+    />
+  </View>
+</View>
+`;
+
+exports[`Square component renders correctly when hidden 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#2244ee",
+      "borderRadius": 3.5,
+      "display": "flex",
+      "height": 35,
+      "justifyContent": "center",
+      "margin": 2,
+      "opacity": 1,
+      "textAlign": "center",
+      "width": 35,
+    }
+  }
+>
+  <View>
+    <Text />
+  </View>
+</View>
+`;
