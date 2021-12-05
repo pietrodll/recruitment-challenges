@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+    app:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        env_file:
+            - .env.production
+        environment:
+            DB_HOST: postgres
+            PORT: 80
+        ports:
+            - '8000:80'
+    postgres:
+        build:
+            context: ./db/
+            dockerfile: Dockerfile.db
+        env_file:
+            - ./db/.env.production
